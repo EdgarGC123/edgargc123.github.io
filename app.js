@@ -10,7 +10,7 @@ collectData = () =>{
 
     $.ajax(
         {
-            url: linkAll
+            url: linkAvatar
         }
     ).then(
         (data)=>{
