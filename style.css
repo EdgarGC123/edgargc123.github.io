@@ -1,7 +1,6 @@
 body {
   background-image: url("https://external-preview.redd.it/D6COo3YmmcBYv5zwCHMdZO4kUjpczWZjNc-Td7cHH20.jpg?auto=webp&s=96e43204a9d64cee57ed9b0acda8f2e05106c180");
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: top;
   height: 100vh;
   /* filter: grayscale(100%) */
@@ -18,7 +17,7 @@ body {
   margin-top: 155px;
 }
 .container {
-  margin-top: 300px;
+  margin-top: 200px;
   display: flex;
   flex-wrap: wrap;
   /* flex-direction: row; */
@@ -27,7 +26,7 @@ body {
   /* justify-items: center; */
   /* align-content: space-between; */
 }
-h2 {
+h1 {
   text-align: center;
   margin: -12px auto;
   color: whitesmoke;
@@ -90,6 +89,18 @@ p {
   float: right;
   clear: right;
 }
+.footer {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 35px;
+}
+#vid {
+  border: 3px solid rgb(31, 31, 31);
+  box-shadow: 20px 20px 15px rgba(0, 0, 0, 5);
+  margin: 15px 10px;
+}
 
 @media (min-width: 600px) {
   .buttons {
@@ -107,5 +118,15 @@ p {
     height: 500px;
     border: 2px solid black;
     border-radius: 10px;
+  }
+  .vid {
+    width: 600px;
+    height: 325px;
+    border: 3px solid rgb(100, 100, 100);
+    box-shadow: 30px 30px 30px rgba(0, 0, 0, 5);
+  }
+  body {
+    background-position: top;
+    background-size: cover;
   }
 }
