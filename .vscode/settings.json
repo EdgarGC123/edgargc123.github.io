@@ -1,0 +1,7 @@
+{
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.suggest.showCustomcolors": false,
+    "editor.suggest.showColors": false,
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark"
+}
