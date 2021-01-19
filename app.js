@@ -18,18 +18,13 @@ optionClicked = (e) => {
   const earthKingdom = "https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=Earth+Kingdom";
   const airNation = "https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=Air+Nation";
 
-  if (bId==1){
-    dataCall = fireNation;
-  }else if(bId==2){
-    dataCall = waterTribe;
-  }else if(bId==3){
-    dataCall = earthKingdom;
-  }else if(bId==4){
-    dataCall = airNation;
-  }else if(bId==5){
-    dataCall = linkSingle
-  }else{
-    dataCall = linkAvatar;
+  switch(bId){
+    case '1': dataCall = fireNation; break;
+    case '2': dataCall = waterTribe; break;
+    case '3': dataCall = earthKingdom; break;
+    case '4': dataCall = airNation; break;
+    case '5': dataCall = linkSingle; break;
+    default: dataCall = linkAvatar; break;
   }
 
   console.log("dataCall value is now: ", dataCall)
