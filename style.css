@@ -1,132 +1,135 @@
 body {
-  background-image: url("https://external-preview.redd.it/D6COo3YmmcBYv5zwCHMdZO4kUjpczWZjNc-Td7cHH20.jpg?auto=webp&s=96e43204a9d64cee57ed9b0acda8f2e05106c180");
-  background-repeat: no-repeat;
-  background-position: top;
-  height: 100vh;
-  /* filter: grayscale(100%) */
-  /* width: 100vw; */
-  /* background-position: absolute; */
+	background-image: url("https://external-preview.redd.it/D6COo3YmmcBYv5zwCHMdZO4kUjpczWZjNc-Td7cHH20.jpg?auto=webp&s=96e43204a9d64cee57ed9b0acda8f2e05106c180");
+	background-repeat: no-repeat;
+	background-position: top;
+	background-attachment: fixed;
+	height: 100vh;
+	/* filter: grayscale(100%) */
+	/* width: 100vw; */
+	/* background-position: absolute; */
 }
 /* body::before {
 } */
 .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  justify-items: auto;
-  margin-top: 155px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	justify-items: auto;
+	margin-top: 155px;
 }
 .container {
-  margin-top: 200px;
-  display: flex;
-  flex-wrap: wrap;
-  /* flex-direction: row; */
-  /* justify-items: center; */
-  justify-content: space-around;
-  /* justify-items: center; */
-  /* align-content: space-between; */
+	margin-top: 75px;
+	/* ^ this moves up the character divs */
+	display: flex;
+	flex-wrap: wrap;
+	/* flex-direction: row; */
+	/* justify-items: center; */
+	justify-content: space-around;
+	/* justify-items: center; */
+	/* align-content: space-between; */
 }
 h1 {
-  text-align: center;
-  margin: -12px auto;
-  color: whitesmoke;
-  text-shadow: 2px 2px 6px #000000;
-  font-family: "Spectral", serif;
+	text-align: center;
+	margin: -12px auto;
+	color: whitesmoke;
+	text-shadow: 2px 2px 6px #000000;
+	font-family: "Spectral", serif;
 }
 h3 {
-  text-align: center;
-  margin: -2px auto;
-  color: whitesmoke;
-  text-shadow: 2px 2px 6px #000000;
-  font-family: "Spectral", serif;
+	text-align: center;
+	margin: -2px auto;
+	color: whitesmoke;
+	text-shadow: 2px 2px 6px #000000;
+	font-family: "Spectral", serif;
 }
 p {
-  color: white;
-  text-shadow: 2px 2px 6px #000000;
-  font-family: "Inconsolata", monospace;
+	color: white;
+	text-shadow: 2px 2px 6px #000000;
+	font-family: "Inconsolata", monospace;
 }
 .character {
-  margin: 15px 10px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  text-align: end;
-  color: red;
-  width: 200px;
-  height: 125px;
-  border: 3px solid rgb(31, 31, 31);
-  box-shadow: 20px 20px 15px rgba(0, 0, 0, 5);
+	margin: 15px 10px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	text-align: end;
+	color: red;
+	width: 200px;
+	height: 125px;
+	border: 3px solid rgb(31, 31, 31);
+	box-shadow: 20px 20px 15px rgba(0, 0, 0, 5);
+	cursor: pointer;
 }
 #modal {
-  /* display: none; */
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  /*This puts our modal in front of the body (which has a default z-index setting of `0`*/
-  overflow: auto; /*if textbox (or any content inside modal) is bigger than screen, it won't force it all, it'll create a scroll it*/
-  /* If overflow is clipped, a scroll-bar should be added to see the rest of the content */
+	/* display: none; */
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+	overflow: auto; /*if textbox (or any content inside modal) is bigger than screen, it won't force it all, it'll create a scroll it*/
+	/* If overflow is clipped, a scroll-bar should be added to see the rest of the content */
 }
 #modal-textbox {
-  background-color: black;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: black;
-  height: 575px;
-  width: 300px;
-  border-radius: 2px;
-  margin: 150px auto;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-  border: 1px solid white;
-  /* position: relative; */
+	background-color: black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: black;
+	height: 575px;
+	width: 300px;
+	border-radius: 2px;
+	margin: 150px auto;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	z-index: 2;
+	border: 1px solid white;
+	/* position: relative; */
 }
 #clsbtn {
-  float: right;
-  clear: right;
+	float: right;
+	clear: right;
 }
 .footer {
-  margin-top: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-bottom: 35px;
+	margin-top: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-bottom: 35px;
 }
 iframe {
-  border: 3px solid rgb(31, 31, 31);
-  box-shadow: 20px 20px 15px rgba(0, 0, 0, 5);
-  margin: 30px 30px;
+	border: 3px solid rgb(31, 31, 31);
+	box-shadow: 20px 20px 15px rgba(0, 0, 0, 5);
+	margin: 30px 30px;
 }
 
 @media (min-width: 600px) {
-  .buttons {
-    margin-top: 130px;
-  }
-  .character {
-    margin: 15px 10px;
-    width: 450px;
-    height: 325px;
-    border: 3px solid rgb(100, 100, 100);
-    box-shadow: 30px 30px 30px rgba(0, 0, 0, 5);
-  }
-  #modal-textbox {
-    width: 650px;
-    height: 500px;
-    border: 2px solid black;
-    border-radius: 10px;
-  }
-  .vid {
-    width: 600px;
-    height: 325px;
-    border: 3px solid rgb(100, 100, 100);
-    box-shadow: 30px 30px 30px rgba(0, 0, 0, 5);
-  }
-  body {
-    background-position: top;
-    background-size: cover;
-  }
+	.buttons {
+		margin-top: 130px;
+	}
+	.character {
+		margin: 15px 10px;
+		width: 450px;
+		height: 325px;
+		border: 3px solid rgb(100, 100, 100);
+		box-shadow: 30px 30px 30px rgba(0, 0, 0, 5);
+	}
+	#modal-textbox {
+		width: 650px;
+		height: 500px;
+		border: 2px solid black;
+		border-radius: 10px;
+	}
+	.vid {
+		width: 600px;
+		height: 325px;
+		border: 3px solid rgb(100, 100, 100);
+		box-shadow: 30px 30px 30px rgba(0, 0, 0, 5);
+	}
+	body {
+		background-position: top;
+		background-size: cover;
+	}
 }

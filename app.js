@@ -1,7 +1,10 @@
 let myCharacters = [];
+let dataCall = "https://last-airbender-api.herokuapp.com/api/v1/characters/avatar";
 
-optionClicked = () => {
-  const linkVar = "https://last-airbender-api.herokuapp.com";
+optionClicked = (e) => {
+  bId = $(e.currentTarget).attr("id");
+  console.log("id of button clicked ",bId)
+  const linkVar = "https://last-airbender-api.herokuapp.com";//general api rules is this link
   const linkAll =
     "https://last-airbender-api.herokuapp.com/api/v1/characters?perPage=$25?page=$12";
   const linkSingle =
@@ -10,11 +13,32 @@ optionClicked = () => {
   const linkAvatar =
     "https://last-airbender-api.herokuapp.com/api/v1/characters/avatar";
 
-  return linkAvatar;
+  const fireNation = "https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=Fire+Nation";
+  const waterTribe = "https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=Water+Tribe";
+  const earthKingdom = "https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=Earth+Kingdom";
+  const airNation = "https://last-airbender-api.herokuapp.com/api/v1/characters?affiliation=Air+Nation";
+
+  if (bId==1){
+    dataCall = fireNation;
+  }else if(bId==2){
+    dataCall = waterTribe;
+  }else if(bId==3){
+    dataCall = earthKingdom;
+  }else if(bId==4){
+    dataCall = airNation;
+  }else if(bId==5){
+    dataCall = linkSingle
+  }else{
+    dataCall = linkAvatar;
+  }
+
+  console.log("dataCall value is now: ", dataCall)
+  $(".character").remove();
+  collectData();
 };
 
 collectData = () => {
-  const myLink = optionClicked();
+  const myLink = dataCall;
 
   $.ajax({
     url: myLink,
@@ -24,10 +48,11 @@ collectData = () => {
       // testy = "thus of stuff"
       for (let char of data) {
         //first if statement clears out any unusable characters.
-        if (
+        if (//filters out bad photos
           char.photoUrl === undefined ||
           char.name == "Yangchen's predecessor" ||
           char.name == "Ru and Yaling" ||
+          char.name == "Circus master" ||
           (/\(.+\)/.test(char.name) &&
             char.name != "Bumi (King of Omashu)" &&
             char.name != "Warden (Boiling Rock)" &&
@@ -38,13 +63,13 @@ collectData = () => {
             char.name != "Ming (pro-bender)" &&
             char.name != "Iroh (United Forces general)" &&
             char.name != "Song (officer)")
-        ) {
+        ) {//lets me know what character was removed 
           console.log("removing character: " + char.name);
           continue;
         }
 
         //we start creating divs to append to container
-        const disDiv = $(`<div class='character' id='${myCharacters.length}'>`);
+        const disDiv = $(`<div class='character' id='${myCharacters.length}'>`);//this is inside the for loop, myCharacters length is incrementing on every loop.
         const backImage = char.photoUrl;
         disDiv.css("background-image", `url(${backImage})`); //.append(name);
 
@@ -55,8 +80,8 @@ collectData = () => {
         // disDiv.on("hover",(event)=>{
         // disDiv.css("filter","grayscale(100%)");
         // })
-        myCharacters.push(char);
-        disDiv.on("click", clickedChar);
+        myCharacters.push(char);//add's the character to the array after it's already been appended.
+        disDiv.on("click", clickedChar);//add's listener to the particular character.
       }
     },
     (error) => {
@@ -151,7 +176,10 @@ clickedChar = (e) => {
 // };
 
 $(() => {
-  $(".buttons").hide();
+  // $(".buttons").hide();
+  $('button.data').on("click", optionClicked);
+  // console.log("value should be all avatars:",test);
+
 
   collectData();
 });
